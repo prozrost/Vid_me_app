@@ -23,11 +23,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity_videoplayer"
+            android:name=".Videoplayer"
             android:label="Videoplayer"
 android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
             />
-        <activity android:name=".User_videos"
+        <activity android:name=".UserVideos"
             android:label="Following"
             />
     </application>

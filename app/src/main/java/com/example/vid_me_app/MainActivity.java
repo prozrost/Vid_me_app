@@ -38,9 +38,11 @@ requestWindowFeature(Window.FEATURE_NO_TITLE);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         mViewPager = (ViewPager) findViewById(R.id.container);
+        assert mViewPager != null;
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        assert tabLayout != null;
         tabLayout.setupWithViewPager(mViewPager);
 
 
@@ -58,11 +60,8 @@ requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
 
-        return super.onOptionsItemSelected(item);
     }
 
 

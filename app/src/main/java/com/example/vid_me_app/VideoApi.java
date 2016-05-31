@@ -24,8 +24,8 @@ public interface VideoApi {
 @Headers("Content-Type:application/x-www-form-urlencoded")
     @FormUrlEncoded
     @POST("/auth/create")
-   Call<SignInResult>insertUser(@Field("username") String username,
-                           @Field("password") String password
+   Call<ConnectionResult>insertUser(@Field("username") String username,
+                                    @Field("password") String password
                            );
 
     @GET("/videos/following")

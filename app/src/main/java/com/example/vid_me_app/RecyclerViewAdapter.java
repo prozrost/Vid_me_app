@@ -26,8 +26,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public VideoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_row,parent,false);
-        VideoViewHolder videoViewHolder = new VideoViewHolder(v);
-        return videoViewHolder;
+        return new VideoViewHolder(v);
     }
 
     @Override
@@ -36,8 +35,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Uri image_uri = Uri.parse(call.get(position).getThumbnail_url());
         Context context = holder.thumbview.getContext();
         Picasso.with(context).load(image_uri).into(holder.thumbview);
-        holder.video_name.setText(call.get(position).getTitle());
-        holder.video_like.setText("Likes :"+String.valueOf(call.get(position).getScore()));
+        holder.videoName.setText(call.get(position).getTitle());
+        holder.videoLikeCount.setText("Likes :"+String.valueOf(call.get(position).getScore()));
 
     }
 
@@ -49,8 +48,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class VideoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         CardView cardView;
 
-        TextView video_name;
-        TextView video_like;
+        TextView videoName;
+        TextView videoLikeCount;
 
         ImageView thumbview;
         public VideoViewHolder(View itemView) {
@@ -59,8 +58,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             itemView.setOnClickListener(this);
            thumbview = (ImageView)itemView.findViewById(R.id.thumb_view);
             cardView = (CardView) itemView.findViewById(R.id.card_view);
-            video_name = (TextView) itemView.findViewById(R.id.Videoname_textView);
-            video_like = (TextView) itemView.findViewById(R.id.like_textview);
+            videoName = (TextView) itemView.findViewById(R.id.Videoname_textView);
+            videoLikeCount = (TextView) itemView.findViewById(R.id.like_textview);
         }
 
         @Override

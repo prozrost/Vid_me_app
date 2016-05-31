@@ -5,9 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Video {
 
-    @SerializedName("clip_url")
-    @Expose
-    private String clip_url;
+
 
     public String getComplete_url() {
         return complete_url;
@@ -40,9 +38,7 @@ public class Video {
     private Integer likes_count;
 
 
-    public String getClipUrl() {
-        return clip_url;
-    }
+
 
 
 

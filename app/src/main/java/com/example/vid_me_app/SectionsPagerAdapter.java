@@ -15,11 +15,11 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new FeaturedFragment();
+                return new FeaturedVideosFragment();
             case 1:
-                return new New_Fragment();
+                return new NewVideosFragment();
             case 2:
-                return new FeedFragment();
+                return new FeedVideosFragment();
         }
          return null;
     }
