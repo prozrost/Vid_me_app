@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-public class Activity_videoplayer extends AppCompatActivity {
+public class Videoplayer extends AppCompatActivity {
 
     VideoView videoView;
     @Override
@@ -17,12 +17,12 @@ public class Activity_videoplayer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ctivity_videoplayer);
         Intent intent = getIntent();
-        String video_url = intent.getExtras().getString("video_url");
+        String videoUrl = intent.getExtras().getString("video_url");
        videoView = (VideoView) findViewById(R.id.video_view);
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(videoView);
         videoView.setMediaController(mediaController);
-        videoView.setVideoURI(Uri.parse(video_url));
+        videoView.setVideoURI(Uri.parse(videoUrl));
         videoView.requestFocus();
         videoView.start();
         assert getSupportActionBar() != null;
